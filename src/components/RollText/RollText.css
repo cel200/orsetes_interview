@@ -1,0 +1,19 @@
+.roll {
+  display: inline-flex;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.roll__letter {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.2em;
+  transition: transform 0.45s var(--ease-out);
+  transition-delay: calc(var(--i) * 0.018s);
+}
+
+.roll:hover .roll__letter,
+.roll-trigger:hover .roll__letter,
+.roll-trigger:focus-visible .roll__letter {
+  transform: translateY(-1.2em);
+}

@@ -1,0 +1,126 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 46px;
+  padding: 0 var(--gutter);
+}
+
+.navbar__logo {
+  position: relative;
+  z-index: 2;
+}
+
+.navbar__logo img {
+  width: 101px;
+  height: auto;
+}
+
+.navbar__links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar__links ul {
+  display: flex;
+  gap: 74px;
+}
+
+.navbar__link {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.navbar__cart {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.navbar__cart:hover {
+  transform: scale(1.1);
+}
+
+.navbar__burger {
+  display: none;
+  position: relative;
+  z-index: 2;
+  width: 24px;
+  height: 18px;
+}
+
+.navbar__burger span {
+  position: absolute;
+  left: 0;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--white);
+  transition: transform 0.4s var(--ease-out), opacity 0.2s ease, width 0.4s var(--ease-out);
+}
+
+.navbar__burger span:nth-child(1) { top: 0; width: 100%; }
+.navbar__burger span:nth-child(2) { top: 8px; width: 70%; }
+.navbar__burger span:nth-child(3) { top: 16px; width: 100%; }
+
+.navbar__burger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.navbar__burger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+.navbar__burger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--gutter);
+  background: var(--black);
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mobile-menu a {
+  font-size: 36px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1199px) {
+  .navbar__links ul {
+    gap: 44px;
+  }
+}
+
+@media (max-width: 809px) {
+  .navbar {
+    height: 50px;
+  }
+
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__burger {
+    display: block;
+  }
+
+  .navbar__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
